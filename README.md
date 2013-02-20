@@ -27,12 +27,7 @@ In your Gemfile:
 gem 'phones', :require => 'phones'
 ```
 
-After requiring it:
-```ruby
-require 'phones'
-```
-
-It adds a ```to_phone``` method to ```String```, so you can just do:
+It adds a ```ruby to_phone``` method to ```ruby String```, so you can just do:
 ```ruby
 	"1-(925)-200-8843".to_phone
 	 => +19252008843
