@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Phones::VERSION
   gem.authors       = ["Jarred Sumner"]
   gem.email         = ["jarred@jarredsumner.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Phones is a barebones phone parsing and formatting library}
+  gem.summary       = %q{Phones is a barebones phone parsing and formatting library}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
@@ -17,5 +17,4 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "activesupport"
 end

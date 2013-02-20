@@ -22,6 +22,11 @@ First, install it:
 gem install phones
 ```
 
+In your Gemfile:
+```ruby
+gem 'phones', :require => 'phones'
+```
+
 After requiring it:
 ```ruby
 require 'phones'

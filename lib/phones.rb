@@ -1,7 +1,7 @@
 require "phones/version"
-require 'active_support'
 require 'phones/parser'
 require 'phones/phone'
+
 module Phones
 end
 
