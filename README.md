@@ -15,7 +15,7 @@ It can parse phone numbers like:
 
 And any combination between those.
 
-## Usage
+## Installation
 
 First, install it:
 ```bash
@@ -26,6 +26,8 @@ In your Gemfile:
 ```ruby
 gem 'phones', :require => 'phones'
 ```
+
+## Usage
 
 It adds a ```to_phone``` method to ```String```, so you can just do:
 ```ruby
