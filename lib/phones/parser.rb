@@ -49,7 +49,7 @@ module Phones
 				if self.number[1] == '1' && self.number.length == "+19252008843".length
 					parts = [self.number[2..4], self.number[5..-1]]
 				# 3 Digit country code?
-				elsif COUNTRY_CODES.include?(self.number[1..4])
+				elsif COUNTRY_CODES.include?(self.number[1..3])
 					country_code = self.number[0..4]
 					parts 			 = [nil, self.number[5..-1]]
 				# 2 Digit country code?

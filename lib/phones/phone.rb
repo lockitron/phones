@@ -59,7 +59,7 @@ module Phones
 
 		def validate_local_code!
 			raise ArgumentError, "Local code: #{@local_code} contains restricted characters" if self.local_code =~ RESTRICTED_CHARACTERS
-			raise ArugmentError, "Local code cannot be blank" if self.local_code.nil? || self.local_code.length == 0
+			raise ArgumentError, "Local code cannot be blank" if self.local_code.nil? || self.local_code.length == 0
 		end
 
 	end
