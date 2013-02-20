@@ -39,6 +39,20 @@ Pretty printing phone numbers:
 => "(925) 200-8843"
 ```
 
+Country code, area code, local code:
+```ruby
+phone = "1-(925)-200-8843".to_phone
+=> +19252008843
+phone.country_code
+=> "+1"
+phone.area_code
+=> "925"
+phone.local_code
+=> "2008843"
+```
+
+Note: ```area_code``` and ```local_code``` is currently only supported for US phone numbers. International phone numbers will have a ```nil``` area_code and ```local_code``` will contain the rest of the phone number. ```country_code``` should work for every country code. 
+
 It'll return nil if it couldn't detect a valid phone number.
 
 
