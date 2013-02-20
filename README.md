@@ -27,10 +27,16 @@ In your Gemfile:
 gem 'phones', :require => 'phones'
 ```
 
-It adds a ```ruby to_phone``` method to ```ruby String```, so you can just do:
+It adds a ```to_phone``` method to ```String```, so you can just do:
 ```ruby
-	"1-(925)-200-8843".to_phone
-	 => +19252008843
+"1-(925)-200-8843".to_phone
+=> +19252008843
+```
+
+Pretty printing phone numbers:
+```ruby
+"1-(925)-200-8843".to_phone.pretty
+=> "(925) 200-8843"
 ```
 
 It'll return nil if it couldn't detect a valid phone number.
