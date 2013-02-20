@@ -76,7 +76,7 @@ module Phones
 			log "Local Code: #{parts[1]}"
 
 			Phones::Phone.new(:country_code => country_code, :area_code => parts[0], :local_code => parts[1])
-		# rescue
+		rescue
 		end
 
 		def self.strip!
