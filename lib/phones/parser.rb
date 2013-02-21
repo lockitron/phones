@@ -67,6 +67,21 @@ module Phones
 					# IDK, man
 					raise ArgumentError, "Can't parse phone number"
 				end
+			elsif self.number[0..1] == "00"
+				@number = self.number[2..-1]
+				if COUNTRY_CODES.include?(self.number[0..2])
+					log "Three Digit Country Code: #{self.number[0..2]}"
+					country_code = "+" + self.number[0..2]
+					parts 			 = [nil, self.number[3..-1]]
+				# 2 Digit country code?
+				elsif COUNTRY_CODES.include?(self.number[0..1])
+					log "Two Digit Country Code: #{self.number[0..1]}"
+					country_code = "+" + self.number[0..1]
+					parts 			 = [nil, self.number[2..-1]]
+				else
+					# IDK, man
+					raise ArgumentError, "Can't parse phone number"
+				end
 			elsif self.number[0] == '1' && self.number.length == "19252008843".length
 				parts = [self.number[1..3], self.number[4..-1]]
 			elsif self.number.length == "9252008843".length
