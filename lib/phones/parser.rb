@@ -44,6 +44,7 @@ module Phones
 		private
 
 		def self.try_without_delimiters!
+			raise ArgumentError, "Valid phone numbers are between 5 and 16" if self.number.length > 5 && self.number.length < 16
 			parts = []
 			# Let's find out if there is a country code
 			country_code = "+1"
