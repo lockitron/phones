@@ -44,12 +44,12 @@ module Phones
 		private
 
 		def self.try_without_delimiters!
-			raise ArgumentError, "Valid phone numbers are between 5 and 16" if self.number.length > 5 && self.number.length < 16
 			parts = []
 			# Let's find out if there is a country code
 			country_code = "+1"
 			# It's easiest to tell when it starts with a plus, so let's start with that
 			log "Number: #{self.number}"
+			raise ArgumentError, "Valid phone numbers are between 5 and 16" unless self.number.length > 5 && self.number.length < 16
 			if self.number[0] == "+"
 				# Estados Unidos!
 				if self.number[1] == '1' && self.number.length == "+19252008843".length
