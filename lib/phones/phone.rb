@@ -40,6 +40,10 @@ module Phones
 			"#{self.country_code}#{self.area_code}#{self.local_code}"
 		end
 
+		def to_phone
+			self
+		end
+
 		def united_states?
 			self.country_code == "+1"
 		end
