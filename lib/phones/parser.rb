@@ -65,7 +65,7 @@ module Phones
 				elsif COUNTRY_CODES.include?(self.number[1..2])
 					log "Two Digit Country Code: #{self.number[1..2]}"
 					country_code = self.number[0..2]
-					parts 			 = [nil, self.number[4..-1]]
+					parts 			 = [nil, self.number[3..-1]]
 				elsif self.number[1] == COMMIES
 					country_code = self.number[0..1]
 					parts 			 = [nil, self.number[2..-1]]
