@@ -13,8 +13,8 @@
 require 'phones/phone'
 module Phones
 	class Parser
-		AMURIKA 						 = '1'.freeze
-		COMMIES 						 = '7'.freeze
+		UNITED_STATES 						 = '1'.freeze
+		SOVIET_UNION  						 = '7'.freeze
 		IGNORABLE_CHARACTERS = /[a-zA-Z]|\-|\s|\.|\(|\)|\;|\:|\*|\&|\%|\$|\#|\@|\!/.freeze
 		def self.parse(options)
 			# Let's figure out what the phone number is
@@ -48,13 +48,13 @@ module Phones
 		def self.try_without_delimiters!
 			parts = []
 			# Let's find out if there is a country code
-			country_code = "+#{AMURIKA}"
+			country_code = "+#{UNITED_STATES}"
 			# It's easiest to tell when it starts with a plus, so let's start with that
 			log "Number: #{self.number}"
 			raise ArgumentError, "Valid phone numbers are between 5 and 16" unless self.number.length > 5 && self.number.length < 16
 			if self.number[0] == "+"
 				# Estados Unidos!
-				if self.number[1] == AMURIKA && self.number.length == "+19252008843".length
+				if self.number[1] == UNITED_STATES && self.number.length == "+19252008843".length
 					parts = [self.number[2..4], self.number[5..-1]]
 				# 3 Digit country code?					
 				elsif COUNTRY_CODES.include?(self.number[1..3])
@@ -66,7 +66,7 @@ module Phones
 					log "Two Digit Country Code: #{self.number[1..2]}"
 					country_code = self.number[0..2]
 					parts 			 = [nil, self.number[3..-1]]
-				elsif self.number[1] == COMMIES
+				elsif self.number[1] == SOVIET_UNION
 					country_code = self.number[0..1]
 					parts 			 = [nil, self.number[2..-1]]
 				else
